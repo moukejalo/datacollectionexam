@@ -16,7 +16,6 @@ def fetchData(url, page_count):
     # récupérer les containers
     containers = soup.find_all('div', class_ = 'col s6 m4 l3')
     containers_of_page.extend(containers)
-    # print(len(containers_of_page))
 
   data = []
   for container in containers_of_page:
@@ -25,6 +24,7 @@ def fetchData(url, page_count):
       image_lien = baseUlr + container.find('a', class_ = 'card-image ad__card-image waves-block waves-light')['href']
       adresse = container.find('p', class_ = 'ad__card-location').find('span').text
       prix = container.find('p', class_ = 'ad__card-price').find('a').text.replace('Prix sur demande', '').replace(' ', '').replace('CFA', '')
+      
       dic= {
         'nom':nom,
         'prix': prix,
@@ -36,19 +36,5 @@ def fetchData(url, page_count):
       pass
 
   df = pd.DataFrame(data)
-  # print(df.head())
   return df
-  # df.to_csv('data.csv', index=False)
     
-
-# df_chiens = fetchData("https://sn.coinafrique.com/categorie/chiens?page=", 1)
-# df_moutons = fetchData("https://sn.coinafrique.com/categorie/moutons?page=", 1)
-# df_volailes = fetchData("https://sn.coinafrique.com/categorie/poules-lapins-et-pigeons?page=", 1)
-# df_volailes.rename(columns={'nom': 'details'}, inplace=True)
-# df_autres = fetchData("https://sn.coinafrique.com/categorie/autres-animaux?page=", 1)
-
-# print(df_chiens.head())
-# print(df_moutons.head())
-# print(df_volailes.head())
-# print(df_autres.head())
-
