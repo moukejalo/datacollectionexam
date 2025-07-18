@@ -10,3 +10,4 @@ pybase64
 plotly
 geopandas
 folium
+streamlit-folium
