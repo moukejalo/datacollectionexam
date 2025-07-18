@@ -1,8 +1,9 @@
-BeautifulSoup
+numpy
+bs4
+requests
+scipy
+matplotlib
 pandas
-streamlit 
-plotly
-geopandas
-folium
-streamlit_folium
-get
+streamlit
+seaborn
+pybase64
