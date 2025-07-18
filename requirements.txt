@@ -1,10 +1,8 @@
-numpy
-bs4
-requests
-scipy
-matplotlib
+BeautifulSoup
 pandas
-streamlit
-seaborn
-pybase64
-
+streamlit 
+plotly
+geopandas
+folium
+streamlit_folium
+get
